@@ -1,0 +1,23 @@
+kind = "low-frequency-long-term"
+utc_active_hour_mean = 18.0
+utc_active_hour_stddev = 2.8
+weekday_sessions_mean = 0.09
+weekend_multiplier = 1.18
+session_minutes_mean = 9.0
+inter_action_seconds_median = 620.0
+min_value_lamports = 100000
+max_value_lamports = 2000000
+rare_event_probability = 0.015
+peer_interaction_probability = 0.58
+consolidation_probability = 0.008
+preferred_assets = ["SOL", "USDC"]
+max_daily_spend_lamports = 10000000
+max_weekly_spend_lamports = 40000000
+account_age_days = 1400
+activity_intensity = 0.05
+risk_tolerance = 0.35
+
+[preferred_protocols]
+native-sol = 0.46
+native-stake = 0.44
+memo = 0.10

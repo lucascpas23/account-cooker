@@ -1,0 +1,23 @@
+kind = "active-trader"
+utc_active_hour_mean = 14.0
+utc_active_hour_stddev = 4.0
+weekday_sessions_mean = 2.7
+weekend_multiplier = 0.72
+session_minutes_mean = 42.0
+inter_action_seconds_median = 48.0
+min_value_lamports = 100000
+max_value_lamports = 18000000
+rare_event_probability = 0.015
+peer_interaction_probability = 0.58
+consolidation_probability = 0.025
+preferred_assets = ["SOL", "USDC"]
+max_daily_spend_lamports = 90000000
+max_weekly_spend_lamports = 360000000
+account_age_days = 420
+activity_intensity = 0.9
+risk_tolerance = 0.8
+
+[preferred_protocols]
+spl-token = 0.62
+native-sol = 0.28
+memo = 0.10

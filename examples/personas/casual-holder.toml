@@ -1,0 +1,23 @@
+kind = "casual-holder"
+utc_active_hour_mean = 19.0
+utc_active_hour_stddev = 3.2
+weekday_sessions_mean = 0.55
+weekend_multiplier = 1.18
+session_minutes_mean = 18.0
+inter_action_seconds_median = 155.0
+min_value_lamports = 50000
+max_value_lamports = 4000000
+rare_event_probability = 0.015
+peer_interaction_probability = 0.58
+consolidation_probability = 0.008
+preferred_assets = ["SOL", "USDC"]
+max_daily_spend_lamports = 20000000
+max_weekly_spend_lamports = 80000000
+account_age_days = 420
+activity_intensity = 0.1833
+risk_tolerance = 0.35
+
+[preferred_protocols]
+native-sol = 0.55
+memo = 0.25
+spl-token = 0.20

@@ -1,0 +1,11 @@
+/target/
+/.account-cooker/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.keypair.json
+*.age
+.env
+/evidence/generated/
+/demo-output/

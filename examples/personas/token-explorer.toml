@@ -1,0 +1,23 @@
+kind = "token-explorer"
+utc_active_hour_mean = 21.0
+utc_active_hour_stddev = 4.5
+weekday_sessions_mean = 1.35
+weekend_multiplier = 1.18
+session_minutes_mean = 26.0
+inter_action_seconds_median = 83.0
+min_value_lamports = 20000
+max_value_lamports = 7000000
+rare_event_probability = 0.015
+peer_interaction_probability = 0.58
+consolidation_probability = 0.008
+preferred_assets = ["SOL", "USDC"]
+max_daily_spend_lamports = 35000000
+max_weekly_spend_lamports = 140000000
+account_age_days = 35
+activity_intensity = 0.45
+risk_tolerance = 0.8
+
+[preferred_protocols]
+spl-token = 0.50
+memo = 0.28
+native-sol = 0.22

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Canonical scale acceptance results</title>
+  <desc id="desc">One thousand agents over thirty virtual days generated 159,721 actions. The complete workflow took 200.50 seconds, used a 114.6 megabyte SQLite database, and peaked at 272.3 megabytes resident memory.</desc>
+  <rect width="1200" height="430" rx="22" fill="#0b1020"/>
+  <text x="60" y="64" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="30" font-weight="700">Canonical scale acceptance</text>
+  <text x="60" y="98" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="17">Measured with /usr/bin/time -l · full workflow · July 22, 2026</text>
+
+  <g font-family="system-ui, sans-serif">
+    <rect x="60" y="135" width="250" height="125" rx="16" fill="#151d33" stroke="#334155"/>
+    <text x="84" y="174" fill="#94a3b8" font-size="16">FLEET</text>
+    <text x="84" y="220" fill="#67e8f9" font-size="40" font-weight="700">1,000</text>
+    <text x="84" y="245" fill="#cbd5e1" font-size="16">agents · 30 days</text>
+
+    <rect x="330" y="135" width="250" height="125" rx="16" fill="#151d33" stroke="#334155"/>
+    <text x="354" y="174" fill="#94a3b8" font-size="16">PLANNED ACTIONS</text>
+    <text x="354" y="220" fill="#a7f3d0" font-size="40" font-weight="700">159,721</text>
+    <text x="354" y="245" fill="#cbd5e1" font-size="16">persona-session</text>
+
+    <rect x="600" y="135" width="250" height="125" rx="16" fill="#151d33" stroke="#334155"/>
+    <text x="624" y="174" fill="#94a3b8" font-size="16">WALL TIME</text>
+    <text x="624" y="220" fill="#fde68a" font-size="40" font-weight="700">200.50 s</text>
+    <text x="624" y="245" fill="#cbd5e1" font-size="16">end-to-end workflow</text>
+
+    <rect x="870" y="135" width="270" height="125" rx="16" fill="#151d33" stroke="#334155"/>
+    <text x="894" y="174" fill="#94a3b8" font-size="16">DURABILITY</text>
+    <text x="894" y="220" fill="#c4b5fd" font-size="40" font-weight="700">0 duplicates</text>
+    <text x="894" y="245" fill="#cbd5e1" font-size="16">7 / 7 leases recovered</text>
+
+    <text x="60" y="310" fill="#cbd5e1" font-size="16">SQLite database</text>
+    <rect x="230" y="291" width="820" height="22" rx="11" fill="#1e293b"/>
+    <rect x="230" y="291" width="344" height="22" rx="11" fill="#22d3ee"/>
+    <text x="1070" y="309" fill="#f8fafc" font-size="16" text-anchor="end">114.6 MB</text>
+
+    <text x="60" y="354" fill="#cbd5e1" font-size="16">Peak resident memory</text>
+    <rect x="230" y="335" width="820" height="22" rx="11" fill="#1e293b"/>
+    <rect x="230" y="335" width="817" height="22" rx="11" fill="#8b5cf6"/>
+    <text x="1070" y="353" fill="#f8fafc" font-size="16" text-anchor="end">272.3 MB</text>
+
+    <text x="60" y="400" fill="#64748b" font-size="14">Bar scale: 0–275 MB · includes planning, three-model evaluation, replay, second seed, crash injection, Surfpool, and evidence</text>
+  </g>
+</svg>

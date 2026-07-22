@@ -1,0 +1,63 @@
+schema_version = 1
+
+[execution]
+mode = "local"
+rpc_url = "http://127.0.0.1:8899"
+loopback_only = true
+send_transactions = true
+public_cluster_enabled = false
+simulation_required = true
+max_compute_units = 200000
+max_priority_fee_micro_lamports = 0
+
+[storage]
+database_path = ".account-cooker/local-surfpool.db"
+lease_seconds = 30
+busy_timeout_ms = 5000
+
+[fleet]
+max_agents = 1000
+default_count = 10
+
+[scheduler]
+worker_concurrency = 4
+rpc_concurrency = 2
+claim_batch_size = 8
+max_retries = 2
+reconciliation_interval_seconds = 15
+max_runtime_seconds = 120
+
+[budgets]
+max_lamports_per_action = 10000000
+max_lamports_per_agent_day = 50000000
+max_lamports_per_fleet_day = 250000000
+minimum_fee_reserve = 500000
+max_actions_per_hour = 10
+max_actions_per_day = 40
+max_actions_per_fleet_hour = 100
+
+[protocols]
+allowlist = ["memo", "native-sol", "native-stake", "spl-token"]
+program_id_allowlist = ["11111111111111111111111111111111", "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL", "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr", "Stake11111111111111111111111111111111111111", "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"]
+action_allowlist = ["native-transfer", "memo", "spl-token-transfer", "stake-create", "stake-deactivate", "stake-withdraw", "browse", "consolidate"]
+paused = []
+max_actions_per_hour = { "native-sol" = 40, memo = 40, "spl-token" = 15, "native-stake" = 5 }
+
+[behavior]
+graph_cross_group_probability = 0.01
+
+[behavior.persona_mix]
+casual-holder = 1.0
+active-trader = 1.0
+staking-oriented = 1.0
+token-explorer = 1.0
+low-frequency-long-term = 1.0
+
+[evaluator]
+longitudinal_windows_days = [1, 7, 14, 30]
+classification_threshold = 0.5
+
+[logging]
+format = "json"
+level = "info"
+redact_agent_ids = true
