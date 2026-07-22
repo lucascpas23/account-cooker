@@ -1,0 +1,14 @@
+[advisories]
+# All six are locked transitive dependencies of surfpool-sdk 1.5.0, which is
+# used only by the offline, loopback xtask acceptance harness. The product
+# crates do not depend on Surfpool. Keep these IDs explicit so cargo-audit
+# still fails on every new advisory. Revisit when Surfpool publishes an
+# updated SDK/runtime dependency set.
+ignore = [
+  "RUSTSEC-2022-0093", # ed25519-dalek 1.0.1 via agave-precompiles
+  "RUSTSEC-2024-0344", # curve25519-dalek 3.2.0 via agave-precompiles
+  "RUSTSEC-2024-0421", # idna 0.1.5 via Surfpool JSON-RPC stack
+  "RUSTSEC-2026-0098", # rustls-webpki 0.101.7 via txtx-addon-kit
+  "RUSTSEC-2026-0099", # rustls-webpki 0.101.7 via txtx-addon-kit
+  "RUSTSEC-2026-0104", # rustls-webpki 0.101.7 via txtx-addon-kit
+]

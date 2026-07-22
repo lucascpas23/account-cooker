@@ -1,0 +1,27 @@
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish = false
+
+[dependencies]
+account-cooker-config = { version = "0.1.0", path = "../crates/account-cooker-config" }
+account-cooker-core = { version = "0.1.0", path = "../crates/account-cooker-core" }
+account-cooker-evaluator = { version = "0.1.0", path = "../crates/account-cooker-evaluator" }
+account-cooker-protocols = { version = "0.1.0", path = "../crates/account-cooker-protocols" }
+account-cooker-scheduler = { version = "0.1.0", path = "../crates/account-cooker-scheduler" }
+account-cooker-store = { version = "0.1.0", path = "../crates/account-cooker-store" }
+anyhow.workspace = true
+async-trait.workspace = true
+chrono.workspace = true
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+solana-keypair.workspace = true
+surfpool-sdk.workspace = true
+tempfile.workspace = true
+tokio.workspace = true
+uuid.workspace = true

@@ -1,0 +1,70 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: "1"
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.97.1
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --all-features -- -D warnings
+      - run: cargo test --workspace --all-features
+      - run: cargo test --doc --workspace
+      - run: cargo build --workspace --all-features --release
+      - run: cargo xtask demo
+      - run: cargo xtask verify-evidence
+      - run: git diff --check
+
+  supply-chain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.97.1
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-audit,cargo-deny
+      - run: test -f Cargo.lock
+      - run: cargo audit
+      - run: cargo deny check
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Reject generated or secret-bearing files
+        shell: bash
+        run: |
+          set -euo pipefail
+          ! find . -path ./.git -prune -o -type f \( -name '*.db' -o -name '*.sqlite' -o -name '*.keypair.json' -o -name '.env' -o -name '*.age' \) -print | grep .
+          ! rg -n --hidden -g '!.git/**' -g '!.github/workflows/ci.yml' -g '!Cargo.lock' '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|\[[[:space:]]*[0-9]{1,3}(,[[:space:]]*[0-9]{1,3}){31,}\])' .
+          ! rg -n --hidden -g '!.git/**' -g '!.github/workflows/ci.yml' '/Users/|/home/[^/]+/' .
+
+  scale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.97.1
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo test -p account-cooker-core same_seed_has_same_trace
+      - run: cargo test -p account-cooker-scheduler bounded_cycle_simulates_without_submission
+      - run: cargo test -p account-cooker-evaluator evaluator_is_deterministic_and_finite

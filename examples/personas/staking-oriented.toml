@@ -1,0 +1,23 @@
+kind = "staking-oriented"
+utc_active_hour_mean = 16.0
+utc_active_hour_stddev = 3.8
+weekday_sessions_mean = 0.28
+weekend_multiplier = 1.18
+session_minutes_mean = 12.0
+inter_action_seconds_median = 310.0
+min_value_lamports = 500000
+max_value_lamports = 30000000
+rare_event_probability = 0.015
+peer_interaction_probability = 0.58
+consolidation_probability = 0.008
+preferred_assets = ["SOL", "USDC"]
+max_daily_spend_lamports = 150000000
+max_weekly_spend_lamports = 600000000
+account_age_days = 420
+activity_intensity = 0.0933
+risk_tolerance = 0.35
+
+[preferred_protocols]
+native-stake = 0.62
+native-sol = 0.30
+memo = 0.08

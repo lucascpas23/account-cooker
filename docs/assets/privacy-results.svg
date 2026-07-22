@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="570" viewBox="0 0 1200 570" role="img" aria-labelledby="title desc">
+  <title id="title">Adversarial privacy evaluation</title>
+  <desc id="desc">ROC AUC is 0.5 for naive-uniform, 0.954 for independent-weighted, and 0.995 for persona-session. Adjusted Rand index is 0.715, 0.910, and 0.709 respectively. Lower clustering and AUC closer to 0.5 are better.</desc>
+  <rect width="1200" height="570" rx="22" fill="#0b1020"/>
+  <text x="60" y="58" fill="#f8fafc" font-family="system-ui, sans-serif" font-size="30" font-weight="700">Adversarial privacy evaluation</text>
+  <text x="60" y="91" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="17">Public features · deterministic five-fold agent holdouts · lower is better</text>
+
+  <g font-family="system-ui, sans-serif">
+    <text x="60" y="137" fill="#f8fafc" font-size="20" font-weight="650">Distinguishability — ROC AUC</text>
+    <text x="1110" y="137" fill="#94a3b8" font-size="14" text-anchor="end">ideal reference: 0.500</text>
+    <line x1="260" y1="158" x2="260" y2="330" stroke="#334155"/>
+    <line x1="680" y1="158" x2="680" y2="330" stroke="#64748b" stroke-dasharray="7 7"/>
+    <line x1="1100" y1="158" x2="1100" y2="330" stroke="#334155"/>
+    <text x="260" y="349" fill="#64748b" font-size="13" text-anchor="middle">0.0</text>
+    <text x="680" y="349" fill="#94a3b8" font-size="13" text-anchor="middle">0.5</text>
+    <text x="1100" y="349" fill="#64748b" font-size="13" text-anchor="middle">1.0</text>
+
+    <text x="60" y="193" fill="#cbd5e1" font-size="16">naive-uniform</text>
+    <rect x="260" y="174" width="840" height="26" rx="8" fill="#1e293b"/>
+    <rect x="260" y="174" width="420" height="26" rx="8" fill="#22c55e"/>
+    <text x="694" y="193" fill="#dcfce7" font-size="15" font-weight="700">0.500</text>
+
+    <text x="60" y="253" fill="#cbd5e1" font-size="16">independent-weighted</text>
+    <rect x="260" y="234" width="840" height="26" rx="8" fill="#1e293b"/>
+    <rect x="260" y="234" width="801" height="26" rx="8" fill="#f59e0b"/>
+    <text x="1072" y="253" fill="#fef3c7" font-size="15" font-weight="700">0.954</text>
+
+    <text x="60" y="313" fill="#cbd5e1" font-size="16">persona-session</text>
+    <rect x="260" y="294" width="840" height="26" rx="8" fill="#1e293b"/>
+    <rect x="260" y="294" width="836" height="26" rx="8" fill="#ef4444"/>
+    <text x="1084" y="313" fill="#fee2e2" font-size="15" font-weight="700" text-anchor="end">0.995</text>
+
+    <text x="60" y="397" fill="#f8fafc" font-size="20" font-weight="650">Persona recoverability — Adjusted Rand Index</text>
+    <line x1="260" y1="420" x2="1100" y2="420" stroke="#334155"/>
+
+    <text x="60" y="456" fill="#cbd5e1" font-size="16">naive-uniform</text>
+    <rect x="260" y="437" width="840" height="22" rx="7" fill="#1e293b"/>
+    <rect x="260" y="437" width="601" height="22" rx="7" fill="#38bdf8"/>
+    <text x="872" y="454" fill="#e0f2fe" font-size="14" font-weight="700">0.715</text>
+
+    <text x="60" y="497" fill="#cbd5e1" font-size="16">independent-weighted</text>
+    <rect x="260" y="478" width="840" height="22" rx="7" fill="#1e293b"/>
+    <rect x="260" y="478" width="764" height="22" rx="7" fill="#f59e0b"/>
+    <text x="1035" y="495" fill="#fef3c7" font-size="14" font-weight="700">0.910</text>
+
+    <text x="60" y="538" fill="#cbd5e1" font-size="16">persona-session</text>
+    <rect x="260" y="519" width="840" height="22" rx="7" fill="#1e293b"/>
+    <rect x="260" y="519" width="596" height="22" rx="7" fill="#a78bfa"/>
+    <text x="867" y="536" fill="#ede9fe" font-size="14" font-weight="700">0.709</text>
+
+    <rect x="842" y="372" width="258" height="40" rx="10" fill="#3f1d24" stroke="#991b1b"/>
+    <text x="971" y="397" fill="#fecaca" font-size="14" text-anchor="middle">sequence ablation: −0.114 AUC</text>
+  </g>
+</svg>
